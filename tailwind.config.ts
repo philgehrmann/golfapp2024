@@ -1,6 +1,7 @@
 import { m } from "framer-motion";
 import type { Config } from "tailwindcss";
 const { nextui } = require("@nextui-org/react");
+const colors = require('tailwindcss/colors')
 
 const config: Config = {
   content: [
@@ -9,17 +10,18 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
-  colors: {
-    tuerkis: '#B1F8F2',
-    green: "#BCD39C",
-    gray: "",
-    yellow: "#FFFC99",
-    lightgreen: "#EAFDCF",
-    brown: "#8E8358",
-    white: "#ffffff"
 
-  },
   theme: {
+    colors: {
+      tuerkis: '#B1F8F2',
+      green: "#BCD39C",
+      gray: "",
+      yellow: "#FFFC99",
+      lightgreen: "#EAFDCF",
+      brown: "#8E8358",
+      white: "#ffffff"
+
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
