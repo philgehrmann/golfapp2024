@@ -28,15 +28,17 @@ export default function Golfclubs({ user }: { user: User | null }) {
   const [loading, setLoading] = useState(true);
   const [golfclubs, setGolfClubs] = useState<any>([]);
   const allClubs: { name: any }[] = [];
-
   const getData = useCallback(async () => {
     try {
       setLoading(true);
+      
       const { data, error, status } = await supabase
-        .from("golfclubs")
-        .select(`name`);
+        .from("sticks")
+        .select()
+        .eq("userid", user?.identities[0].identity_id)
 
       if (error && status !== 406) {
+
         console.log(error);
         throw error;
       }
@@ -58,7 +60,7 @@ export default function Golfclubs({ user }: { user: User | null }) {
 
   useEffect(() => {
     getData();
-  }, [user]);
+  }, []);
 
   return (
     <div className="rounded-[10px] drop-shadow-sm px-6 py-6 bg-white/50 max-h-[250px] overflow-y-scroll">
@@ -68,9 +70,9 @@ export default function Golfclubs({ user }: { user: User | null }) {
             <TableColumn className="uppercase">Golfclubs</TableColumn>
           </TableHeader>
           <TableBody emptyContent={"Golfclubs werden geladen.."} className="">
-            {golfclubs.map(function (data: { name: string }) {
+            {golfclubs.map(function (data: { name: string }, index:any) {
               return (
-                <TableRow key="1">
+                <TableRow key={index}>
                   <TableCell>{data.name}</TableCell>
                 </TableRow>
               );

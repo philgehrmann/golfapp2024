@@ -2,7 +2,7 @@ import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import Header from "../components/Header";
 import { Button } from "@nextui-org/button";
-import Golfclubs from "../components/Golfclubs";
+import Golfclubs from "../components/Sticks";
 
 export default async function Account() {
   const supabase = createClient();
@@ -17,9 +17,8 @@ export default async function Account() {
 
   return (
     <div>
+            <div className="grid grid-cols-[300px_30%_30%]">
       <Header user={user} />
-      <div className="grid grid-cols-[40%_30%_30%]">
-        <div></div>
         <div className="m-6">
           <Golfclubs user={user} />
         </div>

@@ -2,7 +2,7 @@ import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import Header from "../../components/Header";
 import { Button } from "@nextui-org/button";
-import Golfclubs from "../../components/Golfclubs";
+import Golfclubs from "../../components/Sticks";
 
 export default async function Account() {
   const supabase = createClient();

@@ -21,22 +21,13 @@
 body {
   font-family: var(--font-inter);
   color: var(--font-color);
-  background: linear-gradient(
-      343deg,
-      rgb(var(--background-start-rgb)),
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #000000;
   width: 100vw;
   height: 100vh;
-  background: rgb(238, 189, 240);
-  background: linear-gradient(
-    343deg,
-    rgba(238, 189, 240, 1) 0%,
-    rgba(155, 214, 155, 1) 31%,
-    rgba(189, 216, 226, 1) 67%,
-    rgba(224, 197, 240, 1) 100%
-  );
+}
+
+.btn {
+  @apply px-12 bg-tuerkis rounded-lg text-black py-6 w-full uppercase;
 }
 
 h1,

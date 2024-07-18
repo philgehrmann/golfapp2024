@@ -19,7 +19,8 @@ const config: Config = {
       yellow: "#FFFC99",
       lightgreen: "#EAFDCF",
       brown: "#8E8358",
-      white: "#ffffff"
+      white: "#ffffff",
+      black: "#000000",
 
     },
     extend: {
